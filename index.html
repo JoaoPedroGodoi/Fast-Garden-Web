@@ -8,25 +8,25 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <div class="background-wrapper"></div>
+    <div class="fundo-tela"></div>
 
-    <div class="container">
+    <div class="recipiente">
         
-        <!-- Splash Screen -->
-        <div id="splash-screen" class="screen">
-            <h1 class="splash-title">Fast<br><span style="color: var(--primary)">Garden</span></h1>
-            <p class="splash-subtitle">Plantas saudáveis, vasos e kits<br>entregues na sua porta com<br>curadoria especial</p>
+        <!-- Tela de Abertura -->
+        <div id="tela-abertura" class="tela">
+            <h1 class="titulo-abertura">Fast<br><span style="color: var(--primaria)">Garden</span></h1>
+            <p class="subtitulo-abertura">Plantas saudáveis, vasos e kits<br>entregues na sua porta com<br>curadoria especial</p>
 
-            <div class="glass-card advantage-card">
-                <i class="ph ph-plant advantage-icon"></i>
+            <div class="cartao-vidro cartao-vantagem">
+                <i class="ph ph-plant icone-vantagem"></i>
                 <div>
                     <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px">Plantas Saudáveis</h3>
                     <p style="color: rgba(255,255,255,0.8); font-size: 14px">Selecionadas e cuidadas por especialistas.</p>
                 </div>
             </div>
             
-            <div class="glass-card advantage-card mb-4">
-                <i class="ph ph-truck advantage-icon"></i>
+            <div class="cartao-vidro cartao-vantagem margem-baixo-4">
+                <i class="ph ph-truck icone-vantagem"></i>
                 <div>
                     <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px">Entrega Rápida</h3>
                     <p style="color: rgba(255,255,255,0.8); font-size: 14px">Receba suas plantas com segurança e rapidez.</p>
@@ -34,105 +34,110 @@
             </div>
 
             <div style="display: flex; gap: 16px; margin-top: 24px; width: 100%;">
-                <button class="btn-primary" style="flex: 1;" onclick="navigateTo('home-screen')">Começar Agora</button>
-                <button class="glass-card" style="flex: 1; padding: 12px 24px; font-size: 16px; font-weight: 600; color: white" onclick="navigateTo('home-screen')">Já tenho conta</button>
+                <button class="botao-primario" style="flex: 1;" onclick="navegarPara('tela-inicial')">Começar Agora</button>
+                <button class="cartao-vidro" style="flex: 1; padding: 12px 24px; font-size: 16px; font-weight: 600; color: white" onclick="navegarPara('tela-inicial')">Já tenho conta</button>
             </div>
         </div>
 
-        <!-- Home Screen -->
-        <div id="home-screen" class="screen hidden">
-            <div class="app-bar">
+        <!-- Tela Inicial -->
+        <div id="tela-inicial" class="tela oculto">
+            <div class="barra-superior">
                 <div style="display: flex; gap: 12px; align-items: center">
-                    <img src="https://ui-avatars.com/api/?name=User&background=34C759&color=fff" style="width: 40px; border-radius: 50%" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=User&background=34C759&color=fff" style="width: 40px; border-radius: 50%" alt="Usuário">
                     <div>
                         <p style="font-size: 12px; color: rgba(255,255,255,0.7)">Bom dia,</p>
                         <p style="font-weight: 700">Usuário!</p>
                     </div>
                 </div>
-                <button class="cart-icon" onclick="navigateTo('cart-screen')">
-                    <i class="ph ph-shopping-bag"></i>
-                    <span class="cart-badge hidden">0</span>
-                </button>
+                <div style="display: flex; gap: 16px; align-items: center">
+                    <button style="background: none; color: white" onclick="navegarPara('tela-pedidos')">
+                        <i class="ph ph-receipt" style="font-size: 24px"></i>
+                    </button>
+                    <button class="icone-carrinho" onclick="navegarPara('tela-carrinho')">
+                        <i class="ph ph-shopping-bag"></i>
+                        <span class="contador-carrinho oculto">0</span>
+                    </button>
+                </div>
             </div>
 
-            <div class="p-4">
-                <div class="glass-card flex-between mb-4" style="padding: 16px;">
+            <div class="preenchimento-4">
+                <div class="cartao-vidro flex-espacado margem-baixo-4" style="padding: 16px;">
                     <span style="color: rgba(255,255,255,0.5)"><i class="ph ph-magnifying-glass"></i> O que você procura?</span>
                 </div>
 
-                <div class="flex-between mb-4">
+                <div class="flex-espacado margem-baixo-4">
                     <h2 style="font-size: 18px">Categorias</h2>
-                    <button style="color: var(--primary); background: none; font-size: 14px" onclick="navigateTo('cardapio-screen')">Ver todas</button>
+                    <button style="color: var(--primaria); background: none; font-size: 14px" onclick="navegarPara('tela-catalogo')">Ver todas</button>
                 </div>
 
-                <div class="categories-scroll">
-                    <div class="glass-card category-card" onclick="scrollToCategory('Internas')">
-                        <i class="ph ph-potted-plant" style="font-size: 24px; color: var(--primary); margin-bottom: 8px"></i>
+                <div class="rolagem-categorias">
+                    <div class="cartao-vidro cartao-categoria" onclick="rolarParaCategoria('Internas')">
+                        <i class="ph ph-potted-plant" style="font-size: 24px; color: var(--primaria); margin-bottom: 8px"></i>
                         <p style="font-size: 14px; font-weight: 600">Internas</p>
                     </div>
-                    <div class="glass-card category-card" onclick="scrollToCategory('Flores')">
-                        <i class="ph ph-flower" style="font-size: 24px; color: var(--primary); margin-bottom: 8px"></i>
+                    <div class="cartao-vidro cartao-categoria" onclick="rolarParaCategoria('Flores')">
+                        <i class="ph ph-flower" style="font-size: 24px; color: var(--primaria); margin-bottom: 8px"></i>
                         <p style="font-size: 14px; font-weight: 600">Flores</p>
                     </div>
-                    <div class="glass-card category-card" onclick="scrollToCategory('Árvores')">
-                        <i class="ph ph-tree" style="font-size: 24px; color: var(--primary); margin-bottom: 8px"></i>
+                    <div class="cartao-vidro cartao-categoria" onclick="rolarParaCategoria('Árvores')">
+                        <i class="ph ph-tree" style="font-size: 24px; color: var(--primaria); margin-bottom: 8px"></i>
                         <p style="font-size: 14px; font-weight: 600">Árvores</p>
                     </div>
-                    <div class="glass-card category-card" onclick="scrollToCategory('Acessórios')">
-                        <i class="ph ph-package" style="font-size: 24px; color: var(--primary); margin-bottom: 8px"></i>
+                    <div class="cartao-vidro cartao-categoria" onclick="rolarParaCategoria('Acessórios')">
+                        <i class="ph ph-package" style="font-size: 24px; color: var(--primaria); margin-bottom: 8px"></i>
                         <p style="font-size: 14px; font-weight: 600">Acessórios</p>
                     </div>
                 </div>
 
-                <h2 class="mt-4 mb-4" style="font-size: 18px">Destaques da Semana</h2>
-                <div class="glass-card" style="padding: 0; overflow: hidden; position: relative; height: 350px;">
+                <h2 class="margem-cima-4 margem-baixo-4" style="font-size: 18px">Destaques da Semana</h2>
+                <div class="cartao-vidro" style="padding: 0; overflow: hidden; position: relative; height: 350px;">
                     <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1200&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8" alt="Destaque">
                     <div style="position: absolute; bottom: 0; left: 0; padding: 24px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); width: 100%;">
                         <h3 style="font-size: 24px; margin-bottom: 8px;">Costela de Adão</h3>
-                        <p style="color: var(--primary); font-weight: bold; font-size: 18px;">R$ 75,00</p>
+                        <p style="color: var(--primaria); font-weight: bold; font-size: 18px;">R$ 75,00</p>
                     </div>
                 </div>
 
-                <!-- Produtos por Categoria na Home -->
-                <div id="home-products-container" class="mt-4 mb-4"></div>
+                <!-- Produtos por Categoria na Tela Inicial -->
+                <div id="container-produtos-home" class="margem-cima-4 margem-baixo-4"></div>
             </div>
         </div>
 
-        <!-- Cardápio Screen -->
-        <div id="cardapio-screen" class="screen hidden">
-            <div class="app-bar">
-                <button style="background: none; color: white" onclick="navigateTo('home-screen')"><i class="ph ph-arrow-left" style="font-size: 20px"></i></button>
+        <!-- Tela de Catálogo (Cardápio) -->
+        <div id="tela-catalogo" class="tela oculto">
+            <div class="barra-superior">
+                <button style="background: none; color: white" onclick="navegarPara('tela-inicial')"><i class="ph ph-arrow-left" style="font-size: 20px"></i></button>
                 <h1>Todas as Plantas</h1>
-                <button class="cart-icon" onclick="navigateTo('cart-screen')">
+                <button class="icone-carrinho" onclick="navegarPara('tela-carrinho')">
                     <i class="ph ph-shopping-bag"></i>
-                    <span class="cart-badge hidden">0</span>
+                    <span class="contador-carrinho oculto">0</span>
                 </button>
             </div>
             
-            <div id="product-grid" class="product-grid">
-                <!-- Gerado por JS -->
+            <div id="grade-produtos-id" class="grade-produtos">
+                <!-- Gerado pelo Javascript -->
             </div>
         </div>
 
-        <!-- Cart Screen -->
-        <div id="cart-screen" class="screen hidden" style="display: flex; flex-direction: column; min-height: 100vh;">
-            <div class="app-bar">
-                <button style="background: none; color: white" onclick="navigateTo('cardapio-screen')"><i class="ph ph-arrow-left" style="font-size: 20px"></i></button>
+        <!-- Tela do Carrinho -->
+        <div id="tela-carrinho" class="tela oculto" style="display: flex; flex-direction: column; min-height: 100vh;">
+            <div class="barra-superior">
+                <button style="background: none; color: white" onclick="navegarPara('tela-catalogo')"><i class="ph ph-arrow-left" style="font-size: 20px"></i></button>
                 <h1>Checkout</h1>
-                <div style="width: 24px"></div> <!-- Placeholder -->
+                <div style="width: 24px"></div> <!-- Espaço Vazio -->
             </div>
 
             <div style="flex: 1; padding: 16px;">
-                <div id="empty-cart" class="hidden flex-center" style="height: 60vh;">
+                <div id="carrinho-vazio" class="oculto flex-centro" style="height: 60vh;">
                     <p style="color: rgba(255,255,255,0.5)">Seu carrinho está vazio.</p>
                 </div>
 
-                <div id="order-review">
+                <div id="revisao-pedido">
                     <h2 style="font-size: 18px; margin-bottom: 12px">Endereço de Entrega</h2>
-                    <div class="glass-card flex-between mb-4" style="padding: 16px;">
+                    <div class="cartao-vidro flex-espacado margem-baixo-4" style="padding: 16px;">
                         <div style="display: flex; gap: 16px; align-items: center">
                             <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 12px">
-                                <i class="ph ph-map-pin" style="color: var(--primary); font-size: 20px"></i>
+                                <i class="ph ph-map-pin" style="color: var(--primaria); font-size: 20px"></i>
                             </div>
                             <div>
                                 <h3 style="font-size: 16px">Casa</h3>
@@ -142,33 +147,74 @@
                     </div>
 
                     <h2 style="font-size: 18px; margin-bottom: 12px">Revisão do Pedido</h2>
-                    <div id="cart-list" class="mb-4">
-                        <!-- Gerado por JS -->
+                    <div id="lista-carrinho" class="margem-baixo-4">
+                        <!-- Gerado pelo Javascript -->
                     </div>
 
-                    <div class="glass-card p-4">
-                        <div class="flex-between mb-2">
+                    <div class="cartao-vidro preenchimento-4">
+                        <div class="flex-espacado margem-baixo-2">
                             <span style="color: rgba(255,255,255,0.5)">Subtotal</span>
-                            <span id="subtotal-value" style="font-weight: 700">R$ 0,00</span>
+                            <span id="valor-subtotal" style="font-weight: 700">R$ 0,00</span>
                         </div>
-                        <div class="flex-between mb-4">
+                        <div class="flex-espacado margem-baixo-4">
                             <span style="color: rgba(255,255,255,0.5)">Frete</span>
                             <span style="font-weight: 700">R$ 15,00</span>
                         </div>
                         <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 16px 0;"></div>
-                        <div class="flex-between">
+                        <div class="flex-espacado">
                             <span style="font-weight: 700; font-size: 16px">Total Final</span>
-                            <span id="total-value" style="color: var(--primary); font-weight: 700; font-size: 18px">R$ 0,00</span>
+                            <span id="valor-total" style="color: var(--primaria); font-weight: 700; font-size: 18px">R$ 0,00</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="checkout-bar" class="bottom-bar">
-                <button id="btn-checkout" class="btn-primary" onclick="finalizarPedido()">Pagar</button>
+            <div id="barra-pagamento" class="barra-inferior">
+                <button id="botao-pagamento" class="botao-primario" onclick="finalizarPedido()">Pagar</button>
             </div>
         </div>
 
+        <!-- Tela de Meus Pedidos -->
+        <div id="tela-pedidos" class="tela oculto" style="display: flex; flex-direction: column; min-height: 100vh;">
+            <div class="barra-superior">
+                <button style="background: none; color: white" onclick="navegarPara('tela-inicial')"><i class="ph ph-arrow-left" style="font-size: 20px"></i></button>
+                <h1>Meus Pedidos</h1>
+                <div style="width: 24px"></div>
+            </div>
+
+            <div style="flex: 1; padding: 16px;">
+                <div id="pedidos-vazio" class="oculto flex-centro" style="height: 60vh;">
+                    <p style="color: rgba(255,255,255,0.5)">Você ainda não fez nenhum pedido.</p>
+                </div>
+                <div id="lista-pedidos" class="margem-baixo-4">
+                    <!-- Gerado pelo Javascript -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Botão do Chat Flutuante -->
+    <button id="botao-chat-flutuante" class="botao-chat-flutuante oculto" onclick="alternarChat()">
+        <i class="ph ph-chat-circle-dots"></i>
+    </button>
+
+    <!-- Janela do Chat -->
+    <div id="janela-chat" class="janela-chat oculto">
+        <div class="cabecalho-chat">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="avatar-chat"><i class="ph ph-flower-lotus"></i></div>
+                <h3 style="font-size: 16px;">Flora - Especialista em Plantas</h3>
+            </div>
+            <button onclick="alternarChat()" style="background:none; color:white; font-size: 20px;"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="mensagens-chat" id="mensagens-chat">
+            <div class="mensagem mensagem-sistema">Olá! Eu sou a Flora 🌿 Como posso te ajudar a escolher a planta perfeita hoje?</div>
+        </div>
+        <form id="formulario-chat" class="area-digitacao-chat" onsubmit="enviarMensagemChat(event)">
+            <input type="text" id="entrada-chat" placeholder="Digite sua mensagem..." autocomplete="off" required>
+            <button type="submit" class="botao-enviar"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
     </div>
 
     <script src="app.js"></script>
